@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orlek Climbing</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f2937',   // dark gray
+            accent: '#f59e0b'     // orange
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- 🔝 NAVBAR -->
+  <nav class="bg-primary text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      
+      <!-- Logo -->
+      <h1 class="text-xl font-bold">Orlek Climbing</h1>
+
+      <!-- Menu -->
+      <div class="space-x-6 hidden md:block">
+        <a href="index.html" class="hover:text-accent">Domov</a>
+        <a href="area.html" class="hover:text-accent">Območje</a>
+        <a href="routes.html" class="hover:text-accent">Smeri</a>
+        <a href="about.html" class="hover:text-accent">Info</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden px-4 pb-4 md:hidden">
+      <a href="index.html" class="block py-2">Domov</a>
+      <a href="area.html" class="block py-2">Območje</a>
+      <a href="routes.html" class="block py-2">Smeri</a>
+      <a href="about.html" class="block py-2">Info</a>
+    </div>
+  </nav>
+  
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+  <!-- 🧭 HEADER -->
+  <section class="mb-6">
+    <h1 class="text-3xl md:text-4xl font-bold">Orlek</h1>
+    <p class="text-gray-500">Sežana, Kras, Slovenija</p>
+  </section>
+
+
+  <!-- 🖼️ IMAGE GALLERY -->
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+    <img src="images/orlek1.jpg" class="rounded-xl object-cover h-40 w-full">
+    <img src="images/orlek2.jpg" class="rounded-xl object-cover h-40 w-full">
+    <img src="images/orlek3.jpg" class="rounded-xl object-cover h-40 w-full">
+    <img src="images/orlek4.jpg" class="rounded-xl object-cover h-40 w-full">
+  </section>
+
+
+  <!-- 📊 QUICK INFO BAR -->
+  <section class="grid md:grid-cols-4 gap-4 mb-10">
+
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-sm text-gray-500">Tip</p>
+      <p class="font-semibold">Športno plezanje</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-sm text-gray-500">Skala</p>
+      <p class="font-semibold">Apnenec</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-sm text-gray-500">Višina smeri</p>
+      <p class="font-semibold">10–30 m</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-sm text-gray-500">Sezona</p>
+      <p class="font-semibold">Pomlad – jesen</p>
+    </div>
+
+  </section>
+
+
+  <!-- 📝 DESCRIPTION -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Opis</h2>
+    <p class="text-gray-600 leading-relaxed mb-3">
+      Plezališče Orlek se nahaja na kraškem robu v bližini Sežane. 
+      Značilne so kompaktne apnenčaste stene z dobrimi oprimki in raznolikimi linijami.
+    </p>
+    <p class="text-gray-600 leading-relaxed">
+      Smeri so večinoma športno opremljene in primerne tako za začetnike kot izkušene plezalce. 
+      Zaradi odprte lege je območje lahko vetrovno, vendar ponuja odlične pogoje v hladnejših mesecih.
+    </p>
+  </section>
+
+
+  <!-- 🚗 ACCESS & INFO -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-4">Dostop & informacije</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">Dostop</h3>
+        <p class="text-gray-600 text-sm">
+          Parkiranje je možno v bližini vasi Orlek. Do plezališča vodi kratek dostop 
+          po označeni poti (5–10 minut hoje).
+        </p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">Opozorila</h3>
+        <p class="text-gray-600 text-sm">
+          Spoštujte lokalna pravila, ne puščajte smeti in pazite na krušljivo skalo 
+          na nekaterih delih.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 🧱 SECTORS -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-6">Sektorji</h2>
+
+    <div class="space-y-4">
+
+      <!-- Sector -->
+      <div class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold text-lg">Glavna stena</h3>
+          <p class="text-sm text-gray-500">Največ smeri, raznolika težavnost</p>
+        </div>
+        <span class="text-sm bg-gray-200 px-3 py-1 rounded">30 smeri</span>
+      </div>
+
+      <!-- Sector -->
+      <div class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold text-lg">Desni sektor</h3>
+          <p class="text-sm text-gray-500">Krajše, lažje smeri</p>
+        </div>
+        <span class="text-sm bg-gray-200 px-3 py-1 rounded">20 smeri</span>
+      </div>
+
+      <!-- Sector -->
+      <div class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold text-lg">Levi sektor</h3>
+          <p class="text-sm text-gray-500">Težje, previsne linije</p>
+        </div>
+        <span class="text-sm bg-gray-200 px-3 py-1 rounded">15 smeri</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 🚀 CTA -->
+  <section class="text-center">
+    <a href="routes.html" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-gray-800">
+      Poglej vse smeri →
+    </a>
+  </section>
+
+</main>
+
+ <!-- 🔻 FOOTER -->
+  <footer class="bg-primary text-white mt-10">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm">
+      © 2026 Orlek Climbing | Vse pravice pridržane
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html> 

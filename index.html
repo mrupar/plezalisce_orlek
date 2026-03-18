@@ -1,80 +1,177 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Climbing Orlek - Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orlek Climbing</title>
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f6f8;
-}
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-header {
-  background: #1e3a5f;
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav a {
-  color: white;
-  margin-right: 15px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.btn {
-  background: #ff7a18;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-</style>
+  <!-- Custom theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f2937',   // dark gray
+            accent: '#f59e0b'     // orange
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body>
+<body class="bg-gray-100 text-gray-800">
 
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="routes.html">Routes</a>
+  <!-- 🔝 NAVBAR -->
+  <nav class="bg-primary text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      
+      <!-- Logo -->
+      <h1 class="text-xl font-bold">Orlek Climbing</h1>
+
+      <!-- Menu -->
+      <div class="space-x-6 hidden md:block">
+        <a href="index.html" class="hover:text-accent">Domov</a>
+        <a href="area.html" class="hover:text-accent">Območje</a>
+        <a href="routes.html" class="hover:text-accent">Smeri</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden px-4 pb-4 md:hidden">
+      <a href="index.html" class="block py-2">Domov</a>
+      <a href="area.html" class="block py-2">Območje</a>
+      <a href="routes.html" class="block py-2">Smeri</a>
+    </div>
   </nav>
-  <a href="login.html">Login</a>
-</header>
 
-<div class="container">
-  <h1>Explore Climbing in Sežana</h1>
-  <p>Discover the best climbing routes, share experiences, and connect with climbers.</p>
+  <!-- 📄 MAIN CONTENT -->
+  <main class="max-w-6xl mx-auto px-4 py-8">
 
-  <button class="btn" onclick="goToRoutes()">Browse Routes</button>
-</div>
+  <!-- 🖼️ HERO -->
+  <section class="relative h-[400px] rounded-2xl overflow-hidden mb-10">
+    <img 
+      src="images/orlek-hero.jpg" 
+      alt="Orlek climbing"
+      class="w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Orlek</h1>
+      <p class="text-lg md:text-xl">Plezanje v srcu Krasa pri Sežani</p>
+    </div>
+  </section>
 
-<script>
-function goToRoutes() {
-  window.location.href = "routes.html";
-}
-</script>
+
+  <!-- 📊 QUICK STATS -->
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-2xl font-bold text-accent">120+</p>
+      <p class="text-sm text-gray-500">Smeri</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-2xl font-bold text-accent">4a – 8a</p>
+      <p class="text-sm text-gray-500">Težavnost</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-2xl font-bold text-accent">Apnenec</p>
+      <p class="text-sm text-gray-500">Tip skale</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-2xl font-bold text-accent">Celo leto</p>
+      <p class="text-sm text-gray-500">Sezona</p>
+    </div>
+  </section>
+
+
+  <!-- 📝 INTRO -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">O plezališču</h2>
+    <p class="text-gray-600 leading-relaxed">
+      Orlek je manjše, a zelo zanimivo plezališče v bližini Sežane, 
+      značilno za kraški svet. Ponuja raznolike smeri na kompaktnem apnencu, 
+      od lažjih do zahtevnih linij. Zaradi lege je primerno za plezanje skoraj celo leto.
+    </p>
+  </section>
+
+
+  <!-- 🧗 FEATURED SECTORS -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-6">Sektorji</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+        <img src="images/sector1.jpg" class="h-40 w-full object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Glavna stena</h3>
+          <p class="text-sm text-gray-500 mb-2">Največ smeri</p>
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">6a – 7c</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+        <img src="images/sector2.jpg" class="h-40 w-full object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Desni sektor</h3>
+          <p class="text-sm text-gray-500 mb-2">Krajše smeri</p>
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">5b – 6c</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+        <img src="images/sector3.jpg" class="h-40 w-full object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Levi sektor</h3>
+          <p class="text-sm text-gray-500 mb-2">Težje smeri</p>
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">6c – 8a</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 🚀 CTA -->
+  <section class="text-center bg-accent text-white p-8 rounded-2xl">
+    <h2 class="text-2xl font-bold mb-3">Razišči vse smeri</h2>
+    <p class="mb-4">Oglej si vse plezalne smeri v Orleku</p>
+    <a href="routes.html" class="bg-white text-accent px-6 py-2 rounded-lg font-semibold hover:bg-gray-200">
+      Poglej smeri
+    </a>
+  </section>
+
+</main>
+
+  <!-- 🔻 FOOTER -->
+  <footer class="bg-primary text-white mt-10">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm">
+      © 2026 Orlek Climbing | Vse pravice pridržane
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
-</html>
+</html> 

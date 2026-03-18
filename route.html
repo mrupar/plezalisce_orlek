@@ -1,40 +1,133 @@
-
-<!-- ===================== route.html ===================== -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
 <head>
-<meta charset="UTF-8">
-<title>Route Detail</title>
-<style>
-body { font-family: Arial; margin:0; background:#f4f6f8; }
-.container { max-width:800px; margin:auto; padding:20px; }
-.comment { background:#eee; padding:8px; margin:5px 0; border-radius:5px; }
-textarea { width:100%; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orlek Climbing</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f2937',   // dark gray
+            accent: '#f59e0b'     // orange
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-<div class="container">
-  <h2>Matka Canyon - King Line</h2>
-  <p>Grade: 7a | Length: 25m</p>
-  <p>Technical climbing with exposure.</p>
 
-  <h3>Comments</h3>
-  <div id="comments"></div>
-  <textarea id="input"></textarea>
-  <button onclick="addComment()">Post</button>
-</div>
+<body class="bg-gray-100 text-gray-800">
 
-<script>
-function addComment(){
-  const input = document.getElementById('input');
-  if(!input.value) return;
-  const div = document.createElement('div');
-  div.className='comment';
-  div.innerText=input.value;
-  document.getElementById('comments').appendChild(div);
-  input.value='';
-}
-</script>
+  <!-- 🔝 NAVBAR -->
+  <nav class="bg-primary text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      
+      <!-- Logo -->
+      <h1 class="text-xl font-bold">Orlek Climbing</h1>
+
+      <!-- Menu -->
+      <div class="space-x-6 hidden md:block">
+        <a href="index.html" class="hover:text-accent">Domov</a>
+        <a href="area.html" class="hover:text-accent">Območje</a>
+        <a href="routes.html" class="hover:text-accent">Smeri</a>
+        <a href="about.html" class="hover:text-accent">Info</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden px-4 pb-4 md:hidden">
+      <a href="index.html" class="block py-2">Domov</a>
+      <a href="area.html" class="block py-2">Območje</a>
+      <a href="routes.html" class="block py-2">Smeri</a>
+      <a href="about.html" class="block py-2">Info</a>
+    </div>
+  </nav>
+  
+<main class="max-w-4xl mx-auto px-4 py-8">
+
+  <!-- 🧭 HEADER -->
+  <section class="mb-6 text-center">
+    <h1 id="routeName" class="text-3xl md:text-4xl font-bold">Orlek Classic</h1>
+    <p id="routeGrade" class="text-gray-500 mt-1 text-lg">6b</p>
+  </section>
+
+  <!-- 🖼️ HERO IMAGE / TOPO -->
+  <section class="mb-8">
+    <img id="routeImage" src="images/route1.jpg" alt="Route image" class="rounded-2xl shadow w-full h-96 object-cover">
+  </section>
+
+  <!-- 📊 ROUTE DETAILS -->
+  <section class="bg-white rounded-xl shadow p-6 mb-8 grid grid-cols-2 gap-4">
+
+    <div>
+      <h3 class="font-semibold text-gray-700 mb-1">Sektor</h3>
+      <p id="routeSector" class="text-gray-600">Glavna stena</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-gray-700 mb-1">Tip</h3>
+      <p id="routeType" class="text-gray-600">Šport</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-gray-700 mb-1">Dolžina</h3>
+      <p id="routeLength" class="text-gray-600">25 m</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-gray-700 mb-1">Težavnost</h3>
+      <p id="routeGradeDetail" class="text-gray-600">6b</p>
+    </div>
+
+  </section>
+
+  <!-- 📝 DESCRIPTION / BETA -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-3">Opis</h2>
+    <p id="routeDesc" class="text-gray-600 leading-relaxed">
+      Klasična smer Orlek Classic poteka po srednjem delu glavne stene. 
+      Odlična za spoznavanje kraškega apnenca in tehnike varovanja. 
+      Nekaj previsov in strmih delov za izkušene plezalce.
+    </p>
+  </section>
+
+  <!-- 🚀 BACK CTA -->
+  <section class="text-center">
+    <a href="routes.html" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-gray-800">
+      ← Nazaj na vse smeri
+    </a>
+  </section>
+
+</main>
+
+ <!-- 🔻 FOOTER -->
+  <footer class="bg-primary text-white mt-10">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm">
+      © 2026 Orlek Climbing | Vse pravice pridržane
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
 </body>
-</html>
-
+</html> 
