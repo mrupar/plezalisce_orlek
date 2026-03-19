@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Domov | Orlek{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="relative h-[400px] rounded-2xl overflow-hidden mb-10">
+  <img src="{% static 'images/orlek-hero.jpg' %}" class="w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Orlek</h1>
+    <p class="text-lg md:text-xl">Plezanje v srcu Krasa pri Sežani</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+  <div class="bg-white p-4 rounded-xl shadow text-center">
+    <p class="text-2xl font-bold text-accent">{{ routes_count }}</p>
+    <p class="text-sm text-gray-500">Smeri</p>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow text-center">
+    <p class="text-2xl font-bold text-accent">4a – 8a</p>
+    <p class="text-sm text-gray-500">Težavnost</p>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow text-center">
+    <p class="text-2xl font-bold text-accent">Apnenec</p>
+    <p class="text-sm text-gray-500">Skala</p>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow text-center">
+    <p class="text-2xl font-bold text-accent">Celo leto</p>
+    <p class="text-sm text-gray-500">Sezona</p>
+  </div>
+</section>
+
+<!-- DESCRIPTION -->
+<section class="mb-10">
+  <h2 class="text-2xl font-bold mb-3">O plezališču</h2>
+  <p class="text-gray-600">
+    Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="text-center bg-accent text-white p-8 rounded-2xl">
+  <h2 class="text-2xl font-bold mb-3">Razišči vse smeri</h2>
+  <a href="{% url 'routes' %}" class="bg-white text-accent px-6 py-2 rounded-lg font-semibold">
+    Poglej smeri
+  </a>
+</section>
+
+{% endblock %}
