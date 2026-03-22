@@ -131,89 +131,35 @@
   }
 }
 
-/* Mobile devices (phones, up to 480px) */
+/* Mobile devices (phones, up to 480px) - SIMPLIFIED LIKE mobile.html */
 @media (max-width: 480px) {
-  /* General layout */
+  /* Hide complex desktop elements */
+  header, nav, .mat-toolbar, .mat-sidenav, .complex-layout {
+    display: none !important;
+  }
+
+  /* Show only the basic app structure like mobile.html */
   body {
-    padding: 0 8px;
+    margin: 0;
+    padding: 0;
+    background: #eef5f9;
   }
 
-  .container {
-    padding: 0 8px;
-  }
-
-  main {
-    width: 100% !important;
-  }
-
-  /* Fix cards */
-  .mat-card {
-    padding: 12px !important;
-  }
-
-  /* Fix headers */
-  h1, h2, h3 {
-    font-size: 18px !important;
-  }
-
-  /* Tables -> scroll instead of breaking layout */
-  .table-wrapper {
-    overflow-x: auto !important;
-  }
-
-  table {
-    min-width: 600px;
-  }
-
-  /* Fix images */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Fix logo */
-  header div.logo-and-burger a.logo-link {
-    width: 120px !important;
-  }
-
-  /* Stack layout instead of horizontal */
-  .row {
-    display: flex;
-    flex-direction: column !important;
-  }
-
-  /* Buttons full width */
-  button, .mat-button {
+  .root, app-root {
+    display: block;
     width: 100%;
+    min-height: 100vh;
   }
 
-  /* Navigation adjustments */
-  nav {
-    flex-direction: column !important;
+  /* Hide all complex content, show only essential app */
+  main, .content, .container, .mat-card, table, .table-wrapper, .gallery {
+    display: none !important;
   }
 
-  nav a {
-    margin: 4px 0;
-    text-align: center;
-  }
-
-  /* Tab navigation for mobile */
-  .mat-tab-nav-bar {
-    display: none;
-  }
-
-  .tab-button {
+  /* Keep only the basic Angular app structure */
+  .whole-page-wrap {
     display: block !important;
-  }
-
-  /* Adjust form fields */
-  .mat-form-field {
-    width: 100%;
-  }
-
-  /* Hide unnecessary elements on very small screens */
-  .author {
-    font-size: 12px;
+    min-height: 100vh;
   }
 }
 
